@@ -6,3 +6,20 @@
 //  - HH:MM::SS (Eg. 13:45:23)
 
 //  - HH:MM::SS AM/PM (Eg 01:45:23 PM)
+
+
+let counter = 0;
+
+function updateCounter() {
+    counter += 1;
+    const date = new Date();
+    console.log(counter, date.toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+    }))
+    setTimeout(updateCounter, 1000);
+}
+
+updateCounter();
